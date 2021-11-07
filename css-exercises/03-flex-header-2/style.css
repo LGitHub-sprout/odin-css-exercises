@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
+
+/* Reset */
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+
+/* Colors */
+  body {
+    background-color: #393939;
+  }
+  
+/* Typography */
+  body {
+    font-family: 'Besley', serif;
+  }
+
+/* Header Layout */
+  .container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1140px;
+  }
+  .site-header {
+    background-color: #ddd;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+/* Header Items */
+  .logo-wrap {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    font-style: italic;
+    color: #663596;
+    margin-right: 15px;
+  }
+  .main-menu__list {
+    display: flex;
+  }
+  .main-menu__list--li {
+    display: flex;
+  }
+  .main-menu__list--item a {
+    padding: 10px;
+    color: #663596;
+    /* border: 2px solid black; */
+  }
+  [type=button] {
+    background-color: #663596;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  .notif-btn {
+    margin-left: auto;
+  }
+  .user-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #663596;
+    border-radius: 50%;
+    margin-left: 15px;
+    flex-shrink: 0;
+  }  
+
+/* Media Queries */

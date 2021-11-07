@@ -1,0 +1,169 @@
+/* Reset */
+  *,
+  *::after,
+  *::before
+  {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 16px;
+  }
+  body,
+  html,
+  ul,
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+/* 
+  Color palette
+  https://www.downgraf.com/wp-content/uploads/2016/01/Minimalist-Color-Palettes-of-2015-006.jpg
+*/
+  
+/* Mobile First Layout */
+  .site-header {
+    background-color: #c06c84;
+    display: flex;
+    align-items: center;
+    height: 64px;
+  }
+  .site-title {
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-left: 16px;
+  }
+
+  .site-nav__list {
+    justify-content: center;
+  }
+  .sitebar {
+    flex: 1 0 auto;
+  }
+  .card-wrap__list--item {
+    flex-shrink: 1;
+  }
+  .flex-wrap {
+    background-color: #6b5c7b;
+  }
+
+  /* Sidebar */
+    .sidebar {
+      flex-basis: 300px;
+      flex-shrink: 0;
+      padding: 32px 16px 16px 16px;
+    }
+    .site-nav__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 150px;
+    }
+    .site-nav__list--item a {
+      color: #f8b195;
+    }
+  
+  /* Footer */
+    .site-footer {
+      background-color: #3e1e27;
+      padding: 5px 0;
+    }  
+    .site-footer p {
+      text-align: center;
+      color: #999;
+    }
+    .site-footer p:hover {
+      color: linen;
+    }
+
+  /* Main */
+    .main-content {
+      background-color: #355e7e;
+      flex: 1;
+    }
+    .card-wrap {
+      padding: 16px;
+    }
+    .card-wrap__list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .card-wrap__list--item {
+      border: solid 1px rgba(21, 44, 49, .5);
+      background-color: #477da8;
+      box-shadow: 3px 3px 5px 2px rgba(21, 44, 49, 0.2);
+      flex: 1 1 250px;
+      /* max-width: 250px; */
+      border-radius: 5px;
+      column-gap: 32px;
+    }
+    .card-wrap__list--item:hover {
+      box-shadow: 3px 3px 5px 1px rgba(21, 44, 49, 0.5);
+      cursor: pointer;
+    } 
+    .card-wrap__list--item p {
+      margin: 0;
+      padding: 15px;
+      color: #111;
+    }
+
+/* Desktop */
+  @media screen and (min-width: 650px) {
+    
+    .flex-wrap,
+    .flex-wrap .container {
+      display: flex;
+      flex: 1;
+    }
+
+  /* Main */
+    .card-wrap {
+      padding: 32px;
+    }
+    .card-wrap__list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: flex-start;
+    }
+    .card-wrap__list--item {
+      flex-grow: 0;
+      width: 250px;
+   }
+  }

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundations Javascript</title>
+</head>
+<body>
+  <header class="site-header">
+    <h1 id="site-header">Maybe I can't populate an element that's being targeted by .innerHTML?</h1>
+  </header>
+  <div id="div1">The text above has been created dynamically.</div>
+  <p>Yes, it seems JS replaces whatever populated the element being targeted.</p>
+  <p>There is probably a method that allows me to add HTML instead of replace.</p>
+  <p>So, use a span inside an element to inject JS content.</p>
+  <p id="para">JS injection here ... <span id="demo">But this won't show up.</span></p>
+  <p><span class="whatevs"></span></p>
+
+  <!-- <canvas id="canvas" style="border: dashed 2px green;">
+  </canvas> -->
+
+  <button id="machine-btn" style="display: block; margin: 20px; padding: 10px;"></button>
+  <p class="machine-msg" style="margin-left: 20px;"></p>
+
+  <button id="msg-btn">Press me!</button>
+  <script>
+    const btnMsg = document.querySelector( 'button#msg-btn' );
+    btnMsg.onclick = function() {
+      let name = '';
+      name = prompt( 'Please enter your name' );
+      // getting Uncaught ReferenceError: isEmpty -- maybe use switch?
+      if ( name === '' || (name.lenth == 0) ) { // || isEmpty(name) 
+        prompt( 'Don\'t be afraid... you MUST enter your name.' );
+      } else {
+        name = name.trim();
+        // Ex of 2 string literals... not variable iows. 
+        alert( 'Hello, ' + name.toLowerCase() + '. ' + 'It\'s nice to see you.' );
+      }
+    }
+
+  /*
+    // Template Literals 
+    let song = 'BabaLoo';
+    let score = 66;
+    let highestScore = 100;
+    let output = 'I like the song "' + song + '".\nI gave it a score of ' + (score / highestScore * 100) + '%.';
+    output = `I like the song ${song}. I gave it a score of ${ score / highestScore * 100 }%.`
+    console.log( output );
+    // algorithm
+
+    // examScore = 45
+    // examHighestScore = 70
+    // output examReport of examScore as a rounded percentage of examHighestScore 
+    // "You scored X"
+    // then, using ternary operator, output either "Well done, you passed!" or "Sorry, you didn't pass." based on scores.
+
+    let examHighestScore = 70;
+    let examScore = 45;
+    examReport = `You scored ${examScore} / ${examHighestScore} (${Math.round(examScore / examHighestScore * 100)}%).
+    ${examScore >= 49 ? 'Well done, you pass.' : 'Sorry, you need to retake.'}`;
+    console.log(examReport);
+    */
+    
+    /*
+    // Tagged Templates, Template Literals 
+      let person = 'Mike';
+      let age = 28;
+
+      function myTag(strings, personExp, ageExp) {
+        let str0 = strings[0]; // "That "
+        let str1 = strings[1]; // " is a "
+        let str2 = strings[2]; // "."
+
+        let ageStr;
+        if (ageExp > 99) {
+          ageStr = 'centenarian';
+        } else {
+          ageStr = 'youngster';
+        }
+        // We can even return a string built using a template literal
+        return `${str0}${personExp}${str1}${ageStr}${str2}`;
+      }
+      let output2 = myTag`That ${person} is a ${age}.`;
+      console.log(output2); // That Mike is a youngster.
+    */
+
+    // algorithm:
+    // select the button and assign 'onclick' anon function (dot notation)
+    // stmt1: assign var to prompt msg asking for username
+    // stmt2: alert msg to say, "Hello, username! It's nice to see you.
+  </script>
+
+  <script>
+  /*
+    const btn = document.querySelector('button#machine-btn');
+    const msg = document.querySelector( 'p.machine-msg');
+
+    btn.innerHTML = 'Start Machine';
+    msg.innerHTML = 'The Machine is stopped.';
+
+    btn.addEventListener('click', updateBtn);
+
+    function updateBtn() {
+      if ( btn.textContent === 'Start Machine' ) {
+        btn.textContent = 'Stop Machine';
+        msg.textContent = 'The Machine is running.';
+      } else {
+        btn.textContent = 'Start Machine';
+        msg.textContent = 'The Machine is stopped.';
+      }
+    }
+  */
+  </script>
+
+  <script>
+
+  /* 
+  // MDN Math 1 Assmt 1 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Test_your_skills:_Math#math_3
+    let finalResult;
+    let evenOddResult;
+
+    let firstNum = 40;
+    let secondNum = 8;
+    let thirdNum = 3;
+    let fourthNum = 2;
+
+    result1 = firstNum + secondNum;
+    result2 = thirdNum - fourthNum;
+    finalResult = result1 * result2;
+    evenOddResult = finalResult % 1;
+
+    console.log('evenOddResult = ', evenOddResult);
+    console.log('result2 = ', finalResult);
+  */
+
+    // JS for WP Zac Gordon. Save arrays as object, dot notation, nested arrays. 
+    let
+    postIds = [ 36, 329, 209 ],
+    userIds = [ 1, 3, 9, ];
+    postDataNestedArray = [ postIds, userIds ];
+    console.log('Nested array; ', postDataNestedArray );
+
+    // postData = { postIds, userIds };
+    postData = {
+      postIds: 'postIds',
+      userIds: 'userIds'
+    }
+    // using 'dot notation' change name of object property VALUE (not name) in postData object
+    postData.postIds = 'updatedPostIds';
+    // name of array doesn't change
+    console.log( postData, postIds );
+    // change 2nd item in postIds array
+    postIds[1] = 666;
+    console.log( postIds );
+    // postData.username = [ 'Lester', 'Mark', 'Caitlin', 'Alice' ]; //
+    let username = ['Lester', 'Mark', 'Caitlin', 'Alice'];
+    postData.username = username;
+    console.log( postData );
+ 
+  /*
+    // infinity 
+    let infinity = 1 / 0;
+    console.log('1 / 0 = ', infinity);
+
+    // embed variables and expressions using backticks ONLY "extended functionality"
+    let str = "Hello,";
+    let phrase = `${str} World!`;
+    console.log('Embed a string: ', phrase, `${1 + 2}`, typeof alert );
+
+    let name = 'Ilya';
+    console.log( `Hello, ${1}` );
+    console.log( `Hello, ${"name"}` );
+    console.log( `Hello, ${name}` );
+  */
+    
+  /*
+  // https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70
+    const myNotQuiteImmutableObject = {
+      thisCanBeChanged: "not immutable",
+    };
+    myNotQuiteImmutableObject.thisCanBeChanged = "see I changed it.";
+    console.log(myNotQuiteImmutableObject);
+
+    // scope
+    let ex = 'declared outside function';
+    exampleFunction();
+    function exampleFunction() {
+      console.log( 'Inside function' );
+      console.log( ex );
+    }
+    console.log( 'Outside function' );
+    console.log( ex );
+
+    function exampleFunction() {
+      var x = "declared inside function";  // x can only be used in exampleFunction
+      console.log("Inside function");
+      console.log(x);
+    }
+    // console.log(x);  // Causes error
+  */
+
+  /*    // playing around w what i think is anon function 
+      (function () {
+        console.log('What-uh-ev-uh');
+      } ) ();
+      // console.log( function() {} );
+
+    const callbacks = [];
+    // let i = 0;
+      (function () {
+        // var i;
+        for (let i = 0; i < 5; i++) {
+          callbacks.push(function () { return i; });
+        }
+      } ) (); // what do these last parens do?
+    console.log(callbacks.map( function(cb) { return cb(); } ) );
+
+
+
+    // prompt("What's a prompt, bitch!");
+
+    // One line, one action best practice 
+    let counter = 1;
+    2 * counter;
+    counter++;
+
+    // increment & decrement
+    let fia = 5; 
+    console.log('Increment fia: ', fia++, ++fia); // 
+    // console.log('Increment literal: ', ++5); // Just not 5++
+
+  // MDN Math 1 Asst 2
+    let assmt2Result1 = (7 + 13) / (9 + 7);
+    let assmt2Result2 = 100 / (2 * 6);
+    let finalResult;
+
+    assmt2Result1 *= assmt2Result2;
+    finalResult = assmt2Result1.toFixed(2);
+    finalNumber = Number(finalResult);
+
+    console.log(assmt2Result1, typeof(assmt2Result1));
+    console.log(finalResult, typeof(finalResult));
+    console.log('finalNumber: ', finalNumber, typeof(finalNumber));
+    // Addition and Concatenation... don't get tricked!
+    // https://javascript.info/operators#string-concatenation-with-binary 
+    let trickySum = 2 + 2 + '1';
+      console.log('Tricky Addition: ', trickySum, typeof(trickySum) );
+
+    // Unary operator + used on strings -- form fields use case
+    let apples = '2';
+    let oranges = '3';
+    console.log( 'apples + oranges = ', +apples + +oranges );
+    console.log('Number version: ', Number(apples) + Number(oranges) );
+
+    // let x = 50;
+    // let x = 1000 % 750;
+    // let x = (225 + 225) / 3;
+    let x = 50;
+    x *= 4;
+    let y = 50;
+    y += 50 * 3;
+    // y = 200;
+    console.log( 'What is x: ', x );
+    console.log('What is y: ', y);
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext( '2d' );
+
+    ctx.fillStyle = 'pink';
+    ctx.fillRect( 0, 0, x, y );
+    // ctx.fillRect(10, 10, x *= 4, y += 50); 
+    // ctx.fillRect(10, 10, x *= 4, y); 
+    // ctx.strokeStyle = '#38f';
+    // ctx.strokeRect(10, 10, x *= 4, y += 50);
+    */
+  </script>
+
+  <script>
+    console.log('Modulo remainder 1000 % 750: ', 1000 % 750 );
+    // console.log('Assignment operator: ', x *= 4 );
+    // let a = 4,
+    //     b = 6,
+    //     c = 9,
+    //     d = 77,
+    //     sum2;
+    // sum2 = (a + b + c ) / 77;
+    let sum2 = (4 + 6 + 9) / 77;
+    console.log('sum2 = ', sum2.toPrecision(5));
+    console.log( 'G = ', 4 ** 2 ); // same as Math.pow(x,y) 
+    console.log( 'G = ', Math.pow(4,2)); // same as 4 ** 2 
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math#returning_a_random_integer_between_two_bounds
+    function random(min, max) {
+        const num = Math.floor(Math.random() * (max - min + 1)) + min;
+        // return num;
+        console.log('This is a random #: ', num);
+        // document.getElementById("whatevs").innerHTML = random(1, 1000);
+      }
+      random(1, 1000);
+      </script>
+
+  <script>
+    let sum = 4 * 5;
+    document.getElementById("demo").innerHTML = sum;
+  </script>
+
+  <script>
+    let names = ['Jamie', 'Matthew'];
+    names.forEach(name => console.log('Hello, ', name + '.'));
+    // names.forEach(name => alert('Hello, ' + name + '.'));
+
+    let number = 1;
+    console.log(number);
+    let string = 'racist';
+    console.log( string );
+
+    let xx = 0.2 + 0.1;
+    // let xx = ( 0.2 * 10 + 0.1 * 10 ) / 10; // works to remove excess rounding
+    // console.log( 'xx = ', parseInt( xx.toFixed(1) ) ); 
+    console.log('xx = ' , xx);
+    // console.log( parseFloat(xx) );
+    console.log( 'xx is precisely: ', xx.toPrecision(1) ); 
+    console.log( 'xx is the datatype: ', typeof xx ); 
+    console.log( 'is xx NaN true or false: ', isNaN(xx) ); 
+
+
+    let isLoggedIn = false;
+    if ( isLoggedIn === true ) {
+      console.log( 'Show admin area' );
+    }
+
+    function TOP_multiply( x, y ) {
+      if ( x * y > 10 ) {
+        return "Number is bigger than 10";
+      }
+      return ( x * y );
+    }
+    // console.log( TOP_multiply( 3, 5) );
+    // alert( 'Non-breaking message: ' + TOP_multiply( 1, 11 ) );
+
+    console.log( 10 ** 2 );
+    console.log( 10 ** 10 );
+    console.log( 2 ** 2 );
+    console.log( 2 ** 3 );
+    console.log( 1231087 % 2 ); // even always zero, odd always 1 unless a fraction
+
+    let myInt = 5;
+    let myFloat = 6.667;
+    console.log('myInt = ', myFloat );
+    console.log( typeof(myFloat));
+
+    let lotsOfDecimal = 1.766584958675746364;
+    console.log( 'Rounded to 2 decimal places: ', twoDecimalPlaces = lotsOfDecimal.toFixed(3), typeof(lotsOfDecimal) );
+
+    /*
+    let a = 4;
+    let b = '3';
+    let c = '3.333';
+    let answer;
+    console.log( 'answer = ', answer = a + b, typeof(answer) );
+    // parseInt not used in equation, won't work 
+    console.log( 'typeof b = ', parseInt( b ), typeof( b ) );
+    // parseInt now works -- used in equation
+    console.log( 'answer = ', answer = a + parseInt( b ), typeof( answer ) ); 
+    console.log( 'answer2 = ', answer2 = c + answer, typeof( answer2 ) );
+    console.log( a.toString(), typeof(a) );
+    */
+  </script>
+
+
+  <footer>
+    
+  </footer>
+</body>
+</html>

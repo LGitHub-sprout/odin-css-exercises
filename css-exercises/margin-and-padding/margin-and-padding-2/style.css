@@ -1,0 +1,254 @@
+*,
+*::after,
+*::before
+{
+  box-sizing: border-box;
+}
+body {
+  /* background: #eee; */
+  font-family: sans-serif;
+}
+
+.card {
+  max-width: 500px;
+  background: #fff;
+  margin: 16px auto;
+  padding: 10px;
+}
+
+.title,
+.content,
+.button {
+  background: #e3f4ff;
+  margin: 0 0 10px 0;
+}
+.title {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.content,
+.button {
+  font-size: 20px;
+  line-height: 1.5em;
+  padding: 15px 10px;
+}
+
+.button {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#para {
+  font-size: 24px;
+  margin-top: 40px;
+  text-align: center;
+}
+button {
+  border: 1px solid #eee;
+  display: block;
+  margin: 30px auto;
+  padding: 10px 30px;
+  font-size: 18px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+button:hover {
+  border: 3px dashed green;
+}
+
+/* CSS unset */
+
+p {
+  color: red;
+}
+.bar {
+  color: green;
+}
+.bar p {
+  color: unset;
+}
+.foo p {
+  color: blue;
+}
+
+/* Flexbox Example */
+.flex-container {
+  display: flex;
+  /* width: 33%; */
+}
+
+/* this selector selects all divs inside of .flex-container */
+.flex-container div {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 100px;
+  width: 250px;
+  /* flex-grow: 1 | flex-basis: 0 | flex-shrink: 1
+  /* flex: 1 shorthand is above */  
+  flex: 1 1 auto;
+  /* flex: 1 1 0%; */
+}
+.flex-container .two {
+  /* flex-shrink: 0; */
+  /* flex-shrink: 5; */
+}
+
+/* 2nd flexbox example */
+/* .item {
+    padding: 2rem;
+    border: 5px solid #87b5ff;
+    border-radius: 3px;
+    font-size: 2em;
+    background-color: #1c57b5;
+}
+.container {
+  background-color: #f5ca3c;
+  display: flex;
+} */
+/* One Value Syntax */
+.item {
+/* One value syntax */  
+  /* items grow equally to fill space */ 
+  /* flex: 1; e.g., 1 1 0 */
+
+  /* items shring, grow w factor of 1
+     flex-basis is auto */ 
+  /* flex: auto; */
+
+  /* same as flex; 0 1 auto */
+  /* flex: initial; */
+
+/* Two value syntax */
+  /* 2 nums = flex-grow + flex-shrink */
+  /* num and width val = -grow + -basis */
+  /* flex: 0 150px; */
+}
+
+/* 3rd flexbox example */
+/* .item {
+  width: 100px;
+  padding: 2rem;
+  border: 5px solid #87b5ff;
+  border-radius: 3px;
+  font-size: 2em;
+  background-color: #1c57b5;
+  flex: 1;
+}
+.container {
+  background-color: #f5ca3c;
+  max-width: 500px;
+  display: flex;
+}
+.item1 {
+  flex-grow: 2;
+}
+.item2, .item3 {
+  flex-grow: 1;
+} */
+
+/* 4th flexbox example */
+.item {
+  width: 100px;
+  padding: 2rem;
+  border: 5px solid #87b5ff;
+  border-radius: 3px;
+  font-size: 2em;
+  background-color: #1c57b5;
+  flex: 1 1 200px;
+}
+.container {
+  background-color: #f5ca3c;
+  max-width: 1000px;
+  display: flex;
+}
+.item.item1 {
+  flex: 2 1 200px;
+}
+/* .item2, .item3 {
+  flex-grow: 1;
+} */
+
+/* TOP Foundatins css-exercises Center div */
+/* .top-container {
+  margin: 100px auto;
+  max-width: 500px;
+  min-height: 400px;
+  border: 5px solid #1b1d6d;
+  background-color: #3c92fa;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-box {
+  height: 100px;
+  width: 100px;
+  background-color: #da6f92;
+  border-radius: 10px;
+  border: 5px solid #7f0003;
+  color: linen;
+  padding: 5px;
+} */
+
+/* TOP Foundations css-exercises Basic Header Menu */
+  /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    background-color: #393939;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+  /* Typography */
+    li {
+      text-transform: uppercase;
+      display: flex;
+      box-shadow: 4px 2px 2px #dfdfdf;;
+      background-color: #fff;
+      margin: 0 10px;
+      border-radius: 3px;
+      border-bottom: .25px solid #c4c4c4;
+    }
+    li a {
+      color: #363aec;
+      font-size: 14px;
+      padding: 10px;
+      align-self: center;
+    }
+     li:nth-child(4) {
+      background-color: white;
+      padding: 0 15px;
+      margin-left: auto;
+      margin-right: auto;
+     }
+    li:nth-child(4) a {
+      color: #f4604d;
+      font-size: 24px;
+    }
+  /* Main Navigation Layout */
+    .site-header {
+      background-color: #fdeed7;
+      padding: 10px;
+      min-height: 100px;
+      display: flex;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      flex: content;
+    }
+    .main-nav__list {
+      display: flex;
+      flex: 1;
+      flex-flow: row wrap;
+    }
